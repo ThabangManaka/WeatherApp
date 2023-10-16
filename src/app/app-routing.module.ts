@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'weather-icon',
+    loadChildren: () => import('./weather-icon/weather-icon.module').then( m => m.WeatherIconPageModule)
+  },
+  {
+    path: 'forecast',
+    loadChildren: () => import('./forecast/forecast.module').then( m => m.ForecastPageModule)
+  },
 ];
 
 @NgModule({
