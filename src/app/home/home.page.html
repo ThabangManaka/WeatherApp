@@ -10,11 +10,65 @@
 </ion-header>
 
 <ion-content >
-
-  <h2 class="temperature"></h2>
-  <h4 class="location">{{tempData.name}}</h4>
+  {{tempData?.weather.icon}}
+   <img src="{{tempData?.weather.icon}}" >
+  <h2 class="temperature">{{(tempData?.main.temp  - tempData?.main.temp_max).toFixed(0)}} °C</h2>
+  <h4 class="location">{{tempData?.name}}</h4>
   <div class="main-info">
-
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md="6">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                Column 1
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Content goes here.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="6" size-md="6">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                Wind
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              {{tempData?.wind.speed}} KM
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+           <ion-col size="6" size-md="6">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                Wind
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              {{tempData?.wind.speed}} KM
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        
+        <ion-col size="6" size-md="6">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                Wind
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              {{tempData?.wind.speed}} KM
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 
 </ion-content>
