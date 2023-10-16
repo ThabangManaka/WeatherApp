@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WeatherService } from '../services/weather.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
+tempData :any;
+  constructor(private weatherService : WeatherService) {
+ this.weatherService.getCurrent().subscribe(res => {
+   this.tempData = res
+   });
+ 
+  }
 
 }
