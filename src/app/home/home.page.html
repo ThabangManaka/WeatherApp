@@ -11,7 +11,7 @@
 
 <ion-content >
   {{tempData?.weather.icon}}
-   <img src="{{tempData?.weather.icon}}" >
+   <img src="http://openweathermap.org/img/wn/{{tempData?.weather.icon}}" >
   <h2 class="temperature">{{(tempData?.main.temp  - tempData?.main.temp_max).toFixed(0)}} °C</h2>
   <h4 class="location">{{tempData?.name}}</h4>
   <div class="main-info">
@@ -29,7 +29,7 @@
             </ion-card-content>
           </ion-card>
         </ion-col>
-  
+
         <ion-col size="6" size-md="6">
           <ion-card>
             <ion-card-header>
@@ -46,15 +46,15 @@
           <ion-card>
             <ion-card-header>
               <ion-card-title>
-                Wind
+                Humidity
               </ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              {{tempData?.wind.speed}} KM
+              {{tempData?.main.humidity}} %
             </ion-card-content>
           </ion-card>
         </ion-col>
-        
+
         <ion-col size="6" size-md="6">
           <ion-card>
             <ion-card-header>
@@ -70,5 +70,17 @@
       </ion-row>
     </ion-grid>
   </div>
+<Swiper-container [slidesPerView]="2.2"
+[spaceBetween]="20">
+<swiper-slide *ngFor="let fore of forecastData?.list">
+  <div class="card">
 
+
+   <h2>{{fore?.dt_txt}}</h2>
+
+   <h3>{{(fore?.main.temp  - fore?.main.temp_max).toFixed(0)}} °C</h3>
+  </div>
+</swiper-slide>
+
+</Swiper-container>
 </ion-content>
