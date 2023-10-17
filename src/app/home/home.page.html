@@ -10,9 +10,12 @@
 </ion-header>
 
 <ion-content >
-  {{tempData?.weather.icon}}
-   <img src="http://openweathermap.org/img/wn/{{tempData?.weather.icon}}" >
-  <h2 class="temperature">{{(tempData?.main.temp  - tempData?.main.temp_max).toFixed(0)}} °C</h2>
+ <div class="ImageIcon">
+  <img src="http://openweathermap.org/img/wn/{{tempData?.weather[0].icon}}@4x.png" >
+ </div>
+
+
+  <h2 class="temperature">{{convertKelvinToCelsius(tempData?.main.temp) | number: '1.0-1'}}°C</h2>
   <h4 class="location">{{tempData?.name}}</h4>
   <div class="main-info">
     <ion-grid>
@@ -21,11 +24,11 @@
           <ion-card>
             <ion-card-header>
               <ion-card-title>
-                Column 1
+                Pressure
               </ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              Content goes here.
+              {{tempData?.main.pressure}}
             </ion-card-content>
           </ion-card>
         </ion-col>
@@ -76,9 +79,12 @@
   <div class="card">
 
 
-   <h2>{{fore?.dt_txt}}</h2>
+   <h2 class="bottom_time">{{fore?.dt_txt | date :  'HH:mm'}}</h2>
+   <div class="ImageIcon">
+    <img src="http://openweathermap.org/img/wn/{{fore?.weather[0].icon}}@4x.png" >
+   </div>
 
-   <h3>{{(fore?.main.temp  - fore?.main.temp_max).toFixed(0)}} °C</h3>
+   <h3 class="bottom_temp">{{convertKelvinToCelsius(fore?.main.temp) | number: '1.0-1'}} °C</h3>
   </div>
 </swiper-slide>
 

@@ -29,13 +29,7 @@ forecastData: any;
 
     })
   }
-  // getChanceOfRain(): number {
-
-  //   if (this.weatherData && this.weatherData.rain) {
-
-  //     return this.weatherData.rain['1h'] || 0;
-  //   } else {
-  //     return 0;
-  //   }
-  // }
+  convertKelvinToCelsius(kelvin: number): number {
+    return kelvin - 273.15;
+  }
 }

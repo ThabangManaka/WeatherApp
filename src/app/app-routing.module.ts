@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'forecast',
     loadChildren: () => import('./forecast/forecast.module').then( m => m.ForecastPageModule)
   },
+  {
+    path: 'search',
+    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+  },
 ];
 
 @NgModule({
