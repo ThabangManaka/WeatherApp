@@ -11,64 +11,46 @@
 
 <ion-content >
  <div class="ImageIcon">
-  <img src="http://openweathermap.org/img/wn/{{tempData?.weather[0].icon}}@4x.png" >
+  <img src="http://openweathermap.org/img/wn/{{tempData?.weather[0].icon}}@2x.png" >
  </div>
 
 
   <h2 class="temperature">{{convertKelvinToCelsius(tempData?.main.temp) | number: '1.0-1'}}°C</h2>
-  <h4 class="location">{{tempData?.name}}</h4>
+  <h4 class="location">{{tempData?.name}},{{tempData?.sys.country}}</h4>
   <div class="main-info">
     <ion-grid>
       <ion-row>
         <ion-col size="6" size-md="6">
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Pressure
-              </ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              {{tempData?.main.pressure}}
-            </ion-card-content>
-          </ion-card>
+           <div class="temp_container">
+            <h5>Chance of rain</h5>
+            <h2>40%</h2>
+ 
+           </div>
+         
         </ion-col>
 
         <ion-col size="6" size-md="6">
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Wind
-              </ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              {{tempData?.wind.speed}} KM
-            </ion-card-content>
-          </ion-card>
+          <div class="temp_container">
+          
+               <h5>Wind</h5> 
+            <h2>   {{tempData?.wind.speed}} km/h</h2>
+           
+      </div>
         </ion-col>
            <ion-col size="6" size-md="6">
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Humidity
-              </ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              {{tempData?.main.humidity}} %
-            </ion-card-content>
-          </ion-card>
+            <div class="temp_container">
+                <h5>Humidity</h5>
+             
+             <h2> {{tempData?.main.humidity}} %</h2>
+           </div>
         </ion-col>
 
         <ion-col size="6" size-md="6">
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Wind
-              </ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              {{tempData?.wind.speed}} KM
-            </ion-card-content>
-          </ion-card>
+          <div class="temp_container">
+               <h5>Wind</h5> 
+             
+              <h2>{{tempData?.wind.speed}} km/h</h2>
+           </div>
         </ion-col>
       </ion-row>
     </ion-grid>

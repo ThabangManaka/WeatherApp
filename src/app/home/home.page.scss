@@ -1,3 +1,6 @@
+*{
+  font-family :'Pooppins';
+}
 h1, h2,h3,h4
 ,h5{
   margin:0;
@@ -33,14 +36,29 @@ ion-header {
   text-align: center;
 }
 .temperature{
+
   text-align: center;
-  font-weight: 400;
-  font-size:  16px;
+  font-weight: 900;
+  font-size:  32px;
+  margin-top: -12px;
 }
 .location {
   text-align: center;
-  font-weight: 400;
-  font-size:  14px;
+  font-weight: 600;
+  font-size:  25px;
+}
+.temp_container{
+  margin:2px;
+  margin-top: 20px;
+  h5{
+    font-weight: 400;
+    font-size:  20px;
+  }
+   h2{
+    margin-top: 5px;;
+    font-weight: 600;
+    font-size:  25px;
+   }
 }
 swiper-container{
 width:100%;
