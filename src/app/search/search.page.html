@@ -5,9 +5,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- <h5 class="date"></h5>
+ <h5 class="date">Today, 25, Dec</h5>
  <h3 class="location">{{this.tempData?.city.name}}</h3>
 
- <!-- <apx-chart [series]="series" [chart]="chart" [title]="title"></apx-chart> -->
- <apx-chart ></apx-chart>
+  <canvas #lineCanvas> </canvas>
+  <ion-list>
+    <ion-item *ngFor="let day of filteredWeather">
+      <ion-label>
+        {{ day.dayOfWeek }} - {{ day.forecast.main.temp }} °C
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

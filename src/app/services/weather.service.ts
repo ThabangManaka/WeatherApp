@@ -18,13 +18,23 @@ export class WeatherService {
 
   getForecasEveryHour(lat:any,lon:any) {
     https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={API key}
-    return this.http.get(`https://pro.openweathermap.org/data/2.5/forecast/hourly?q=Cape Town&appid=87e9146464b43379098266fed155bb89`)
+    return this.http.get(`https://pro.openweathermap.org/data/2.5/forecast/hourly?q=Cape Town&appid=14f69ecd93693b2d205969f462afa916`)
   }
 
   getDailyForecast() {
 
-    return this.http.get(`https://api.openweathermap.org/data/2.5/forecast?q=Cape Town&appid=87e9146464b43379098266fed155bb89`)
+    return this.http.get(`https://api.openweathermap.org/data/2.5/forecast?q=Cape Town&appid=14f69ecd93693b2d205969f462afa916`)
   }
 
+  getWeeklyForecast(lat:any,lon:any) {
 
+
+    return this.http.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,hourly,minutely,alerts&units=metric&appid=14f69ecd93693b2d205969f462afa916`)
+  }
+
+  getWeeklyWeather(city:string): Observable<any> {
+
+
+     return this.http.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=14f69ecd93693b2d205969f462afa916`);
+  }
 }
