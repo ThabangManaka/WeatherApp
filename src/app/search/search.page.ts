@@ -49,7 +49,7 @@ weeklyWeatherData: any;
         next7Days.push({ dayOfWeek, forecast: forecastForDay });
       }
     }
-
+  console.log(next7Days)
     this.filteredWeather = next7Days;
   }
    filterWeatherByDay(targetDate: Date): any {
@@ -69,7 +69,9 @@ weeklyWeatherData: any;
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return days[date.getDay()];
   }
-
+  convertKelvinToCelsius(kelvin: number): number {
+    return kelvin - 273.15;
+  }
   ngOnInit() {
   }
 

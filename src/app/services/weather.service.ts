@@ -13,7 +13,7 @@ export class WeatherService {
   constructor(public http : HttpClient) { }
 
   getCurrent(): Observable<any>{
-   return this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${"Cape Town"}&appid=${API_KEY}`)
+   return this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${"Cape Town"}&appid=14f69ecd93693b2d205969f462afa916`)
   }
 
   getForecasEveryHour(lat:any,lon:any) {
